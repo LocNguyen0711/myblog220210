@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" class="link-to-css">
+  <link rel="stylesheet" href="{% static 'icon/css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'js/script.js' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My blog | Loc Nguyen</title>
+</head>
+
+<body>
+  <div class="header">
+    {% block header %}
+    <div class="nav">
+      <a href="#" class="logo">
+        <img src="logo" alt="" class="logo-image" />
+      </a>
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="{% url 'blog:index' %}" class="menu-link">Home</a>
+        </li>
+        <li class="menu-item">
+          <a href="{% url 'blog:newpost' %}" class="menu-link">New Post</a>
+        </li>
+        <li class="menu-item">
+          <a href="{% url 'blog:profit' %}" class="menu-link">Profit</a>
+        </li>
+        <li class="menu-item">
+          <a href="{% url 'blog:contact' %}" class="menu-link">Contact Us</a>
+        </li>
+      </ul>
+      <div class="left-heading">
+        <ul>
+          <li><a href="#" class="fas fa-search"></a></li>
+          <li><a href="#" class="fas fa-shopping-cart"></a></li>
+          <li>
+            <a href="#" class="user-icon fas fa-user"></a>
+            <ul class="user-items">
+              <li><a href="{% url 'blog:signin_view' %}">Sign In</a></li>
+              <li><a href="{% url 'blog:signup_view' %}">Sign Up</a></li>
+              <li><a href="{% url 'blog:signout_view' %}">Sign Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+  </div>
+  <div class="container">
+    {% block container %}
+    {% endblock %}
+  </div>
+  {% block footer %}
+  {% endblock %}
+</body>
+<script src="{% static 'js/script.js' %}"></script>
+
+</html>

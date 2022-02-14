@@ -1,0 +1,18 @@
+{% extends 'pages/layout.html' %}
+{% block container %}
+{% block title %}
+{% endblock %}
+<form action="{% url 'blog:signin_view' %}" method="POST" class="fSignin">
+     {% csrf_token %}
+     <div class="model">
+          <div class="heading">
+               <h1 class="title">Sign In To Access</h1>
+          </div>
+          {{ message }}
+          <span><input type="text" name="username" placeholder="Username"></span>
+          <span><input type="password" name="password" placeholder="Password"></span>
+          <span><input type="submit" value="Sign In" name="signin"></span>
+          <span><a href="{% url 'blog:signup_view' %}">Create new an account!</a></span>
+     </div>
+</form>
+{% endblock %}

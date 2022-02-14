@@ -1,0 +1,8 @@
+{% extends 'pages/layout.html' %}
+{% block container %}
+     <ul>
+          <li>{{request.user.username}}</li>
+          <li>{{request.user.first_name}}</li>
+          <li>{{request.user.email}}</li>
+     </ul>
+{% endblock %}

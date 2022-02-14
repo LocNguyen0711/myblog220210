@@ -1,0 +1,16 @@
+{% extends 'pages/layout.html' %}
+{% block container %}
+<form action="{% url 'blog:newpost' %}" method="POST" class="fSignin">
+     {% csrf_token %}
+     <div class="model">
+          <div class="heading">
+               <h1 class="title">Create Your Post</h1>
+          </div>
+          {{ message }}
+          <span>{{form.title}}</span>
+          <span>{{form.discription}}</span>
+          <span>{{form.body}}</span>
+          <span><input type="submit" value="create" name="create"></span>
+     </div>
+</form>
+{% endblock %}

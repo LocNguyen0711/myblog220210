@@ -1,0 +1,14 @@
+{% extends 'pages/layout.html' %}
+{% block container %}
+<div class="content">
+     <ul class="post-content">
+          {% for post in posts %}
+          <div class="post">
+               <span class="item title"><li>{{ post.title }}</li></span>
+               <span class="item discription"><li>{{ post.discription }}</li></span>
+               <span class="item body"><li>{{ post.body }}</li></span>
+          </div>
+               {% endfor %}
+     </ul>
+</div>
+{% endblock %}
