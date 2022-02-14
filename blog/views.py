@@ -1,11 +1,9 @@
-from cmath import log
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 from .models import mCreatepost
 from .forms import fUserCreate, fCreatepost
-from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
-from django.shortcuts import redirect, render
+from django.shortcuts import render
 # Create your views here.
 
 
